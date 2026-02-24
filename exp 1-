@@ -1,0 +1,836 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN9Fat1aSG+HfytEb/l27gk",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sakshirathi32/PRACT1/blob/main/exp%201-\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "EXPERIMENT 10\n",
+        "\n",
+        "STUDY OF PANDAS LIBRARY\n",
+        "\n",
+        "SAKSHI RATHI\n",
+        "\n",
+        "25070123129\n"
+      ],
+      "metadata": {
+        "id": "HmUpQSPBEuww"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#INTRODUCTION TO PANDAS\n",
+        "# pandas : panel data\n"
+      ],
+      "metadata": {
+        "id": "RDyMVKIAFJuv"
+      },
+      "execution_count": 62,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "s = pd.Series([10,20,30,40])\n",
+        "s"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 210
+        },
+        "id": "U5ZC-1V6GrjG",
+        "outputId": "c99b1425-35cb-4023-e4eb-07429a0c1636"
+      },
+      "execution_count": 63,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0    10\n",
+              "1    20\n",
+              "2    30\n",
+              "3    40\n",
+              "dtype: int64"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>10</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>20</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>30</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>40</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> int64</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 63
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#create dataframe\n",
+        "data = {\n",
+        "    \"Name\": [\"A\",\"B\",\"C\"],\n",
+        "    \"Marks\": [85,90,78]\n",
+        "}\n",
+        "df = pd.DataFrame(data)\n",
+        "print(df)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TpmIU7KMIbB5",
+        "outputId": "b10f8d57-a727-4fbd-9fd4-9b13771c5573"
+      },
+      "execution_count": 64,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Name  Marks\n",
+            "0    A     85\n",
+            "1    B     90\n",
+            "2    C     78\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# FIND the structure of DataFrame\n",
+        "df.shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sn0KRqyAJ3WI",
+        "outputId": "8511e345-e1c4-44bf-ec11-e18bc9d3fbde"
+      },
+      "execution_count": 65,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(3, 2)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 65
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.ndim\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hYrj2pePKRKf",
+        "outputId": "d45fce47-b43f-4dba-99d2-62cb7658c408"
+      },
+      "execution_count": 66,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "2"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 66
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.size"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PEUzpfOIKoNv",
+        "outputId": "015fae12-c1f5-461b-b333-15565afcdb7b"
+      },
+      "execution_count": 67,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "6"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 67
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# display column names\n",
+        "df.columns"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VeDOzA0VK_Nl",
+        "outputId": "a68e5de9-19a6-4758-f5c9-86d4ee3e12d8"
+      },
+      "execution_count": 68,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Index(['Name', 'Marks'], dtype='object')"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 68
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#check data types of rach column\n",
+        "df.dtypes"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 147
+        },
+        "id": "bJqvBpZyL2LD",
+        "outputId": "bd07e3ba-b0c4-42b0-b158-3333e8acb3b0"
+      },
+      "execution_count": 69,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Name     object\n",
+              "Marks     int64\n",
+              "dtype: object"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>0</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>Name</th>\n",
+              "      <td>object</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>Marks</th>\n",
+              "      <td>int64</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> object</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 69
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Access individual column\n",
+        "df[\"Name\"]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 178
+        },
+        "id": "Nup8U9QFMLQw",
+        "outputId": "bc542f87-fcb4-472d-c05e-d2aea9306ac5"
+      },
+      "execution_count": 70,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0    A\n",
+              "1    B\n",
+              "2    C\n",
+              "Name: Name, dtype: object"
+            ],
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Name</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>A</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>B</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>C</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div><br><label><b>dtype:</b> object</label>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 70
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#CREATE DATAFRAME\n",
+        "DATA = {\n",
+        "    \"Name\": [\"A\",\"B\",\"C\"],\n",
+        "    \"Marks\": [85,90,78]\n",
+        "\n",
+        "}\n",
+        "df = pd.DataFrame(DATA)\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AZh-YAeENFTE",
+        "outputId": "43681317-3063-4c0e-ac36-f2a19a1ed5d4"
+      },
+      "execution_count": 71,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Name  Marks\n",
+            "0    A     85\n",
+            "1    B     90\n",
+            "2    C     78\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# access name of first row\n",
+        "df.loc[0,\"Name\"]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "FHTa7_7BOODX",
+        "outputId": "54b5ed29-493d-4789-8212-ee65f76c7ec9"
+      },
+      "execution_count": 72,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'A'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 72
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.iloc[0,0] = 'A'"
+      ],
+      "metadata": {
+        "id": "tmjdJAD_OWhO"
+      },
+      "execution_count": 73,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# add a new column\n",
+        "'''if marks 80-90-first class\n",
+        "if marks>=90- distinction\n",
+        "if marks>80-second class '''\n",
+        "df[\"Grade\"] = [\"first class\",\"distinction\",\"second class\"]\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7xIscQotOyTq",
+        "outputId": "68295b3e-5f2d-40e0-e389-45c47a905bf6"
+      },
+      "execution_count": 74,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Name  Marks         Grade\n",
+            "0    A     85   first class\n",
+            "1    B     90   distinction\n",
+            "2    C     78  second class\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#update Data in DataFrame\n",
+        "#change marks of student A to 88\n",
+        "\n",
+        "df.loc[0,\"Marks\"] = 88\n",
+        "df.iloc[1,1]=91\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "viq7p8sNPy5p",
+        "outputId": "02acc1b5-5062-4aac-adc3-0b8da90cba9e"
+      },
+      "execution_count": 75,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Name  Marks         Grade\n",
+            "0    A     88   first class\n",
+            "1    B     91   distinction\n",
+            "2    C     78  second class\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#delete a column\n",
+        "df.drop(\"Grade\",axis=1, inplace=True, errors='ignore')\n",
+        "df1=df\n",
+        "print(df1)\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "50goPMSfRrOH",
+        "outputId": "7eee84f2-1d1d-4813-a6e5-540cf5cc7d5d"
+      },
+      "execution_count": 82,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  Name  Marks\n",
+            "0    A     88\n",
+            "1    B     91\n",
+            "2    C     78\n",
+            "  Name  Marks\n",
+            "0    A     88\n",
+            "1    B     91\n",
+            "2    C     78\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#perform basic statistical analysis\n",
+        "mean1=df[\"Marks\"].mean()\n",
+        "mean1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JO9BqanCU4ay",
+        "outputId": "1aa403a9-4250-487b-d261-8a6f42a25290"
+      },
+      "execution_count": 84,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "np.float64(85.66666666666667)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 84
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#apply condition (Filtering)\n",
+        "#Display students scoring more than 80.\n",
+        "\n",
+        "df[df['Marks'] > 80]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 112
+        },
+        "id": "VUrbEBZSVTVt",
+        "outputId": "ea216be1-fe04-44aa-a270-eed17cdd45e4"
+      },
+      "execution_count": 92,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "  Name  Marks\n",
+              "0    A     88\n",
+              "1    B     91"
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-a5857250-78dd-452c-9142-b09c68f5e566\" class=\"colab-df-container\">\n",
+              "    <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Name</th>\n",
+              "      <th>Marks</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>A</td>\n",
+              "      <td>88</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>B</td>\n",
+              "      <td>91</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "    <div class=\"colab-df-buttons\">\n",
+              "\n",
+              "  <div class=\"colab-df-container\">\n",
+              "    <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-a5857250-78dd-452c-9142-b09c68f5e566')\"\n",
+              "            title=\"Convert this dataframe to an interactive table.\"\n",
+              "            style=\"display:none;\">\n",
+              "\n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\" viewBox=\"0 -960 960 960\">\n",
+              "    <path d=\"M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z\"/>\n",
+              "  </svg>\n",
+              "    </button>\n",
+              "\n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-buttons div {\n",
+              "      margin-bottom: 4px;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "    <script>\n",
+              "      const buttonEl =\n",
+              "        document.querySelector('#df-a5857250-78dd-452c-9142-b09c68f5e566 button.colab-df-convert');\n",
+              "      buttonEl.style.display =\n",
+              "        google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "      async function convertToInteractive(key) {\n",
+              "        const element = document.querySelector('#df-a5857250-78dd-452c-9142-b09c68f5e566');\n",
+              "        const dataTable =\n",
+              "          await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                    [key], {});\n",
+              "        if (!dataTable) return;\n",
+              "\n",
+              "        const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "          '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "          + ' to learn more about interactive tables.';\n",
+              "        element.innerHTML = '';\n",
+              "        dataTable['output_type'] = 'display_data';\n",
+              "        await google.colab.output.renderOutput(dataTable, element);\n",
+              "        const docLink = document.createElement('div');\n",
+              "        docLink.innerHTML = docLinkHtml;\n",
+              "        element.appendChild(docLink);\n",
+              "      }\n",
+              "    </script>\n",
+              "  </div>\n",
+              "\n",
+              "\n",
+              "    </div>\n",
+              "  </div>\n"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "dataframe",
+              "summary": "{\n  \"name\": \"df[df['Marks'] > 80]\",\n  \"rows\": 2,\n  \"fields\": [\n    {\n      \"column\": \"Name\",\n      \"properties\": {\n        \"dtype\": \"string\",\n        \"num_unique_values\": 2,\n        \"samples\": [\n          \"B\",\n          \"A\"\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    },\n    {\n      \"column\": \"Marks\",\n      \"properties\": {\n        \"dtype\": \"number\",\n        \"std\": 2,\n        \"min\": 88,\n        \"max\": 91,\n        \"num_unique_values\": 2,\n        \"samples\": [\n          91,\n          88\n        ],\n        \"semantic_type\": \"\",\n        \"description\": \"\"\n      }\n    }\n  ]\n}"
+            }
+          },
+          "metadata": {},
+          "execution_count": 92
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "min1=df[\"Marks\"].min()\n",
+        "min1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "87xQbg1zWCsd",
+        "outputId": "bd9d7a4b-c851-4392-b94a-acd39ecded2a"
+      },
+      "execution_count": 88,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "78"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 88
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "max1=df[\"Marks\"].max()\n",
+        "max1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wf4MAs4JWS4b",
+        "outputId": "76721b10-a13d-4b17-cb4f-c3b195a3fe4d"
+      },
+      "execution_count": 89,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "91"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 89
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "CMOJhTbOS--G"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "IRKGfTFqQcEd"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
